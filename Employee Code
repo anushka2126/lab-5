@@ -1,0 +1,63 @@
+import java.util.ArrayList;              
+import java.util.Collections;            
+import java.util.List;                    
+
+
+
+class Employee implements Comparable<Employee>
+{
+	int id;
+	String name;
+	int age;
+	float salary;  
+	
+
+	Employee(int id,String name,int age,float salary)
+	{   
+		/* Initialized values*/
+		this.id=id;             
+		this.name=name;
+		this.age=age;
+		this.salary=salary;
+	}
+	
+
+	public int compareTo(Employee e)
+	{  
+		
+
+		if( salary==e.salary)             
+		return 0;  
+		
+		else if( salary>e.salary)  
+		return 1;  
+		
+		else  
+		return -1;  
+		}  
+}
+public class SalarySort           
+{
+
+	public static void main(String[] args)       
+	{
+		List<Employee> emp=new ArrayList<Employee>();     
+	     
+		
+		
+		emp.add(new Employee(101,"aisha ",29,25000f));  
+		emp.add(new Employee(143,"rahul ",27,29000f)); 
+		emp.add(new Employee(117,"kajal ",22,28000f));
+		emp.add(new Employee(121,"pooja ",21,37000f));
+		emp.add(new Employee(180,"amit   ",26,40000f));
+		emp.add(new Employee(115,"sanjay",24,38000f));
+		
+		
+		
+		Collections.sort(emp);  
+		for(Employee e1:emp)       
+		{  
+		System.out.println("Employee Name: "+e1.name+"  "+"Employee Age: "+e1.age+"  "+"Employee salary: "+e1.salary);  
+		}  
+
+	}
